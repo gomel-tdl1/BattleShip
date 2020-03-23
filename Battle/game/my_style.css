@@ -1,0 +1,68 @@
+body {
+    background: black;
+}
+div#board {
+    position: relative;
+    width: 1500px;
+    height: 730px;
+    margin: auto;
+    background: url("resource/radar.jpg") no-repeat;
+}
+div#messageArea {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: rgb(1, 83, 0);
+}
+table#sea{
+    position: absolute;
+    border-spacing: 0px;
+    left:311px;
+    top:140px;
+}
+table#nameOfShout1{
+    position: absolute;
+    color: lime;
+    text-align: center;
+    top: 140px;
+    left: 261px;
+    border-spacing: 0px;
+    font-size: 20px;
+}
+table#nameOfShout2{
+    position: absolute;
+    color: lime;
+    text-align: center;
+    top: 90px;
+    left: 312px;
+    border-spacing: 0px;
+    font-size: 20px;
+}
+td{
+    width: 47px;
+    height: 48px;
+}
+form {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 15px;
+    background-color: rgb(1, 83, 0);
+}
+form input{
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+    font-size: 1em;
+}
+.hit{
+    background: url("resource/ship.png") no-repeat center center;
+    background-size: contain;
+}
+.hit:hover{
+    background: url("resource/fire.gif") no-repeat center center;
+    background-size: 40px 40px;
+}
+.miss{
+    background: url("resource/miss.png") no-repeat center center;
+    background-size: contain;
+}
