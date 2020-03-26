@@ -8,7 +8,7 @@
 <body>
 <div id="board">
     <div id="messageArea">
-        <output/>
+
     </div>
 
     <table id="sea" bordercolor="blue">
@@ -78,13 +78,27 @@
         </tr>
     </table>
     <table id="nameOfShout1">
-        <tr><td>A</td></tr>
-        <tr><td>B</td></tr>
-        <tr><td>C</td></tr>
-        <tr><td>D</td></tr>
-        <tr><td>E</td><tr/>
-        <tr><td>F</td></tr>
-        <tr><td>G</td></tr>
+        <tr>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>E</td>
+        <tr/>
+        <tr>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>G</td>
+        </tr>
     </table>
     <table id="nameOfShout2">
         <tr>
@@ -98,10 +112,12 @@
         </tr>
     </table>
 
-    <form name="search">
-            <input type="text" id="coordinates" name="location" placeholder="Enter coordinates"/>
-            <input type="button" id="fire" name="print" value="Fire!"/>
+    <form id="first" name="search">
+        <input type="text" id="coordinates" name="location" placeholder="Enter coordinates"/>
+        <input type="button" id="fire" name="print" value="Fire!"/>
+        <input type="button" id="new" name="clear" value="New Game"/>
     </form>
+
 </div>
 <script src="battleship.js"></script>
 </body>

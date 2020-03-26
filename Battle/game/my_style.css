@@ -10,9 +10,10 @@ div#board {
 }
 div#messageArea {
     position: absolute;
-    left: 0px;
+    right: 30px;
     top: 0px;
-    color: rgb(1, 83, 0);
+    color: lime;
+    font-size: 30px;
 }
 table#sea{
     position: absolute;
@@ -42,7 +43,7 @@ td{
     width: 47px;
     height: 48px;
 }
-form {
+form#first {
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -59,10 +60,14 @@ form input{
     background-size: contain;
 }
 .hit:hover{
-    background: url("resource/fire.gif") no-repeat center center;
-    background-size: 40px 40px;
+    background: url("resource/hit.gif") no-repeat center center;
+    background-size: contain;
 }
 .miss{
     background: url("resource/miss.png") no-repeat center center;
     background-size: contain;
+}
+.miss:hover{
+    background: url("resource/bict.gif") no-repeat center center;
+    background-size:contain;
 }
