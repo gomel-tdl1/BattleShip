@@ -26,9 +26,9 @@ let model = {
     numShips: 3,
     shipLength: 3,
     shipsDestroyed: 0,
-    ships: [{locations: [0, 0, 0], hits: ["", "", ""]},
-        {locations: [0, 0, 0], hits: ["", "", ""]},
-        {locations: [0, 0, 0], hits: ["", "", ""]}],
+    ships: [{locations: [0, 0, 0], hits: ["", "", ""], navigate: 0},
+        {locations: [0, 0, 0], hits: ["", "", ""], navigate: 0},
+        {locations: [0, 0, 0], hits: ["", "", ""], navigate: 0}],
     fire: function (guess) {
         for (let i = 0; i < this.numShips; i++) {
             let ship = this.ships[i];
@@ -70,11 +70,11 @@ let model = {
             let masx = [];
             for (let i = 0; i < this.boardSize; i++) {
                 mas0.push(sea[i][0]);
-                masx.push(sea[i][this.boardSize-1]);
+                masx.push(sea[i][this.boardSize - 1]);
             }
             // console.log(mas0);
             // console.log(masx);
-            if (navigate === 1 && (second == sea[0].indexOf(center) || second == sea[this.boardSize-1].indexOf(center))) {
+            if (navigate === 1 && (second == sea[0].indexOf(center) || second == sea[this.boardSize - 1].indexOf(center))) {
                 return false;
             } else if (navigate === 0 && (mas0.includes(center) || masx.includes(center))) {
                 return false;
@@ -99,14 +99,12 @@ let model = {
                     loc1 = sea[x - 1][y];
                     loc3 = sea[x + 1][y];
                     locations = [loc1, center, loc3];
-                    return locations;
-                    bol = false;
+                    return [locations, navigate];
                 } else if (navigate === 0) {
                     loc1 = sea[x][y - 1];
                     loc3 = sea[x][y + 1];
                     locations = [loc1, center, loc3];
-                    return locations;
-                    bol = false;
+                    return [locations, navigate];
                 }
             }
         }
@@ -123,14 +121,16 @@ let model = {
         return false;
     },
     generateTrueLocation: function () {
-        let locations;
+        let locations, navigate;
         for (let i = 0; i < this.numShips; i++) {
             do {
-                locations = this.shipLocation();
+                [locations, navigate] = this.shipLocation();
             } while (this.locationWithShips(locations));
             this.ships[i].locations = locations;
+            this.ships[i].navigate = navigate;
             console.log(this.locationWithShips(locations));
             console.log(this.ships[i].locations);
+            console.log(this.ships[i].navigate);
         }
     }
 };
